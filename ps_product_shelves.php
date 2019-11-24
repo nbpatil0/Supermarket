@@ -56,7 +56,7 @@
 <!DOCTYPE html>
 <html>
 	
-	<?php include('templets/header.php'); ?>
+	<?php include('templates/header.php'); ?>
 
 	<section class="container grey-text">
 		<h4 class="center">Add Product Shelves</h4>

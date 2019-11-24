@@ -44,7 +44,7 @@
  <!DOCTYPE html>
  <html>
 
- 	<?php include('templets/header.php'); ?>
+ 	<?php include('templates/header.php'); ?>
 
  	<div class="container center darkslategray-text">
  		<?php if($employee): ?>
@@ -73,6 +73,6 @@
  		<?php endif; ?>
  	</div>
 
- 	<?php include('templets/footer.php'); ?>
+ 	<?php include('templates/footer.php'); ?>
  
  </html>

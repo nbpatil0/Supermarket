@@ -26,7 +26,7 @@
 <!DOCTYPE html>
 <html>
 	
-	<?php include('templets/header.php'); ?>
+	<?php include('templates/header.php'); ?>
 
 	<h4 class="center grey-text">Employees</h4>
 	<div class="container">
@@ -49,6 +49,6 @@
 		</div>
 	</div>
 
-	<?php include('templets/footer.php'); ?>
+	<?php include('templates/footer.php'); ?>
 
 </html>

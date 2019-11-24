@@ -145,7 +145,7 @@
 <!DOCTYPE html>
 <html>
 	
-	<?php include('templets/header.php'); ?>
+	<?php include('templates/header.php'); ?>
 
 	<section class="container grey-text">
 		<h4 class="center">Add Employee</h4>
@@ -182,6 +182,6 @@
 		</form>
 	</section>
 
-	<?php include('templets/footer.php'); ?>
+	<?php include('templates/footer.php'); ?>
 
 </html>
