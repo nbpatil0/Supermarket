@@ -30,7 +30,7 @@
 	
 	<?php include('templates/header.php'); ?>
 
-	<h4 class="center grey-text">Products</h4>
+	<h4 class="center darkred-text">Products</h4>
 	<div class="container">
 		<div class="row">
 			<?php foreach ($product as $pdt): ?>

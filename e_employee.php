@@ -147,7 +147,7 @@
 	
 	<?php include('templates/header.php'); ?>
 
-	<section class="container grey-text">
+	<section class="container darkred-text">
 		<h4 class="center">Add Employee</h4>
 		<form class="white" action="e_employee.php" method="POST">
 			<label>Name</label>

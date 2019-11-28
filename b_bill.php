@@ -68,6 +68,8 @@
 				echo 'query error: ' . mysqli_error($connect);
 			}
 
+			date_default_timezone_set('Asia/Calcutta');
+
 			$date1 = date("Y-m-d");
 
 
@@ -111,7 +113,7 @@
 	
 	<?php include('templates/header.php'); ?>
 
-	<section class="container grey-text">
+	<section class="container darkred-text">
 		<h4 class="center">Billing</h4>
 		<form class="white" action="b_bill.php" method="POST">
 			

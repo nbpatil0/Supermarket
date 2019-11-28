@@ -28,7 +28,7 @@
 	
 	<?php include('templates/header.php'); ?>
 
-	<h4 class="center grey-text">Product Shelves</h4>
+	<h4 class="center darkred-text">Product Shelves</h4>
 	<div class="container">
 		<div class="row">
 			<?php foreach ($product_shelves as $pdt_slf): ?>

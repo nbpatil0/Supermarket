@@ -28,7 +28,7 @@
 	
 	<?php include('templates/header.php'); ?>
 
-	<h4 class="center grey-text">Employees</h4>
+	<h4 class="center darkred-text">Employees</h4>
 	<div class="container">
 		<div class="row">
 			<?php foreach ($employee as $emp): ?>

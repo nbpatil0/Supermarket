@@ -58,7 +58,7 @@
 	
 	<?php include('templates/header.php'); ?>
 
-	<section class="container grey-text">
+	<section class="container darkred-text">
 		<h4 class="center">Add Product Shelves</h4>
 		<form class="white" action="ps_product_shelves.php" method="POST">
 

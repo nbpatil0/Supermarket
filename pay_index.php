@@ -27,7 +27,7 @@
 	
 	<?php include('templates/header.php'); ?>
 
-	<h4 class="center grey-text">Customers</h4>
+	<h4 class="center darkred-text">Customers</h4>
 	<div class="container">
 		<div class="row">
 			<?php foreach ($payment as $pmt): ?>

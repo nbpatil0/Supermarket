@@ -31,7 +31,7 @@
 
 	if (isset($_POST['submit'])) {
 
-		echo $amount1;
+		//echo $amount1;
 
 		// check bill_no
 		if (empty($_POST['bill_no'])) {
@@ -45,7 +45,7 @@
 		}
 	
 		// check customer_id
-		// check bill_no
+		//check bill_no
 		// if (empty($_POST['customer_id'])) {
 		// 	$errors['customer_id'] = 'customer_id is required <br />';
 		// } else {
@@ -150,17 +150,15 @@
 	
 	<?php include('templates/header.php'); ?>
 
-	<section class="container grey-text">
+	<section class="container darkred-text">
 		<h4 class="center">Make Payment</h4>
 		<form class="white" action="pay_payment.php" method="POST">
+
+			<!-- <h5 class="center">Bill no : <?php echo htmlspecialchars($_GET['bill_no']); ?></h5> -->
 
 			<label>Bill no</label>
 			<input type="number" name="bill_no" value="<?php echo htmlspecialchars($_GET['bill_no']); ?>">
 			<div class="red-text"><?php echo $errors['bill_no']; ?></div>
-
-			<!-- <label>Customer ID</label>
-			<input type="number" name="customer_id" value="<?php echo $_GET['c_id']; ?>">
-			<div class="red-text"><?php echo $errors['customer_id']; ?></div> -->
 			
 			<label>Amount</label>
 			<input type="number" name="amount" value="<?php echo htmlspecialchars($amount1) ?>">

@@ -191,7 +191,8 @@ body {
       <a href="pay_payments.php">New Payment</a>
       <!-- <a href="#">Link 3</a> -->
     </div>
-  </div> 
+  </div>
+  <a href="index.php" class="left brand-logo brand-text">  Logout    </a> 
 
 </div>
 

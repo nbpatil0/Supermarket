@@ -151,7 +151,7 @@
 	
 	<?php include('templates/header.php'); ?>
 
-	<section class="container grey-text">
+	<section class="container darkred-text">
 		<h4 class="center">Add Product</h4>
 		<form class="white" action="p_product.php" method="POST">
 

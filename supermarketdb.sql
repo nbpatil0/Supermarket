@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2019 at 06:17 PM
+-- Generation Time: Nov 28, 2019 at 08:00 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -76,7 +76,8 @@ INSERT INTO `billing_counter` (`bill_no`, `customer_id`, `employee_id`, `bdate`)
 (72, 1112, 111, '2019-11-24 11:43:07'),
 (79, 2226, 111, '2019-11-24 14:49:20'),
 (80, 2227, 111, '2019-11-24 16:06:14'),
-(82, 2228, 111, '2019-11-24 17:14:00');
+(115, 2227, 111, '2019-11-29 00:05:18'),
+(120, 2229, 111, '2019-11-29 00:22:49');
 
 -- --------------------------------------------------------
 
@@ -104,9 +105,22 @@ INSERT INTO `cart` (`cart_id`, `model_id`, `quantity`, `amount`, `bill_no`) VALU
 (67, 12122, 1, 50, 79),
 (68, 12111, 2, 100, 80),
 (69, 12122, 5, 500, 80),
-(72, 12111, 1, 90, 82),
-(73, 12122, 2, 100, 82),
-(74, 12123, 1, 14999, 82);
+(118, 12111, 5, 1140, 115),
+(125, 12111, 2, 456, 120),
+(126, 12122, 1, 50, 120);
+
+--
+-- Triggers `cart`
+--
+DELIMITER $$
+CREATE TRIGGER `amounts` BEFORE INSERT ON `cart` FOR EACH ROW BEGIN
+UPDATE p_name,product
+SET p_name.quantity=p_name.quantity-NEW.QUANTITY
+WHERE NEW.MODEL_ID=product.model_id AND
+product.name_id=p_name.name_id;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -131,7 +145,7 @@ INSERT INTO `customer` (`customer_id`, `name`, `email`, `phone_no`, `zipcode`) V
 (1112, 'Basu', 'basu@gmail.com', 8965231470, 584128),
 (2226, 'Sammed', 'sammed@gmail.com', 8523987410, 591242),
 (2227, 'Bhuvan', 'bhuvan@gmail.com', 8563256989, 562157),
-(2228, 'Arjun', 'arjun@gmail.com', 6932569852, 584128);
+(2229, 'Sachin Koppad', 'sachin@gmail.com', 6532568956, 587101);
 
 -- --------------------------------------------------------
 
@@ -182,7 +196,8 @@ INSERT INTO `payment` (`payment_id`, `customer_id`, `pdate`, `amount`, `mode`, `
 (7, 1112, '2019-11-24 11:44:01', 190, 'Cash', 72),
 (10, 2226, '2019-11-24 14:49:52', 250, 'Cash', 79),
 (11, 2227, '2019-11-24 16:06:50', 600, 'Card', 80),
-(13, 2228, '2019-11-24 17:14:49', 15189, 'Net Banking', 82);
+(20, 2227, '2019-11-29 00:05:54', 1140, 'Card', 115),
+(25, 2229, '2019-11-29 00:23:21', 506, 'Cash', 120);
 
 -- --------------------------------------------------------
 
@@ -245,8 +260,8 @@ CREATE TABLE `p_name` (
 --
 
 INSERT INTO `p_name` (`name_id`, `name`, `price`, `quantity`) VALUES
-(1, 'Red Label Natural Care 500g', 228, 200),
-(14, 'Colgate', 50, 200),
+(1, 'Red Label Natural Care 500g', 228, 193),
+(14, 'Colgate', 50, 199),
 (15, 'Redmi Note8 Pro 6GB and 64GB', 14999, 200);
 
 -- --------------------------------------------------------
@@ -355,19 +370,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `billing_counter`
 --
 ALTER TABLE `billing_counter`
-  MODIFY `bill_no` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `bill_no` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `cart_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2229;
+  MODIFY `customer_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2230;
 
 --
 -- AUTO_INCREMENT for table `employee`
@@ -379,7 +394,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `payment_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `product`

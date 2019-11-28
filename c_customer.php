@@ -138,7 +138,7 @@
 	
 	<?php include('templates/header.php'); ?>
 
-	<section class="container grey-text">
+	<section class="container darkred-text">
 		<h4 class="center">Add customer</h4>
 		<form class="white" action="c_customer.php" method="POST">
 			<label>Name</label>
